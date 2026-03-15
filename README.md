@@ -1,32 +1,80 @@
 # BDD-Lab
 
-Laboratorio práctico en Java para aplicar la metodología **Behavior-Driven Development (BDD)** mediante la automatización de un escenario de búsqueda en Google utilizando **Cucumber, Selenium WebDriver, Maven y Java 17+**.
+Laboratorio práctico en Java para aplicar la metodología **Behavior-Driven Development (BDD)** mediante la automatización de pruebas web utilizando **Cucumber, Selenium WebDriver, PageFactory, Maven y Java 17+**.
 
 ---
 
-##  Objetivo
+# Objetivo
 
-Implementar pruebas automatizadas basadas en comportamiento usando **Gherkin** y Cucumber, validando la funcionalidad de búsqueda en Google mediante Selenium en modo headless.
+Implementar pruebas automatizadas basadas en comportamiento utilizando **Gherkin** y **Cucumber**, validando diferentes funcionalidades web mediante **Selenium WebDriver** ejecutándose en **modo headless**.
 
-El laboratorio demuestra cómo estructurar un proyecto BDD profesional con:
+Este laboratorio demuestra cómo estructurar un proyecto BDD profesional con:
 
-- Features en lenguaje natural  
-- Step Definitions en Java  
-- Ejecución con Maven  
-- Generación automática de reporte HTML  
-
----
-
-##  Metodología Aplicada: BDD
-
-1.  Escribir el comportamiento en lenguaje Gherkin (Feature).  
-2.  Implementar los Step Definitions en Java.  
-3.  Ejecutar los escenarios con Maven.  
-4.  Validar resultados mediante reporte HTML.  
+* Features escritas en lenguaje natural (Gherkin)
+* Step Definitions implementadas en Java
+* Automatización con Selenium WebDriver
+* Uso del patrón **PageFactory**
+* Ejecución automatizada con Maven
+* Generación automática de **reportes HTML**
 
 ---
 
-##  Escenario Implementado
+# Tecnologías Utilizadas
+
+* Java 17+
+* Maven
+* Cucumber
+* Selenium WebDriver
+* PageFactory
+* Chrome Headless
+
+---
+
+# Metodología Aplicada: BDD
+
+El desarrollo sigue el flujo clásico de **Behavior-Driven Development**:
+
+1. Definir el comportamiento esperado en **Gherkin (Feature)**
+2. Implementar los **Step Definitions en Java**
+3. Automatizar la interacción con la UI usando **Selenium WebDriver**
+4. Ejecutar los escenarios con **Maven**
+5. Validar los resultados mediante **reportes HTML**
+
+---
+
+# Estructura del Proyecto
+
+```
+bdd-java
+│
+├── src
+│   ├── test
+│   │   ├── java
+│   │   │   └── com/eci/myproject
+│   │   │       ├── pages
+│   │   │       │   ├── GooglePage.java
+│   │   │       │   ├── DropdownPage.java
+│   │   │       │   └── LoginPage.java
+│   │   │       │
+│   │   │       └── steps
+│   │   │           ├── GoogleSteps.java
+│   │   │           ├── DropdownSteps.java
+│   │   │           └── LoginSteps.java
+│   │   │
+│   │   └── resources
+│   │       └── features
+│   │           ├── google.feature
+│   │           ├── dropdown.feature
+│   │           └── login.feature
+│
+└── pom.xml
+```
+
+---
+
+# Escenarios Implementados
+
+## 1️⃣ Google Search
 
 ```gherkin
 Feature: Google Search
@@ -36,16 +84,86 @@ Feature: Google Search
     When I search for "GitHub"
     Then I should see "GitHub" in the results
 ```
---- 
 
-## Como ejecutarlo
+---
 
-```javac
+## 2️⃣ Dropdown Selection
+
+```gherkin
+Feature: Dropdown functionality
+
+  Scenario: Select an option from the dropdown
+    Given I open the dropdown page
+    When I select "Option 1"
+    Then "Option 1" should be selected
+```
+
+---
+
+## 3️⃣ Login Authentication
+
+```gherkin
+Feature: Login functionality
+
+  Scenario: Successful login
+    Given I open the login page
+    When I enter valid username and password
+    And I click the login button
+    Then I should see the secure area
+```
+
+---
+
+# Cómo ejecutar el laboratorio
+
+Para ejecutar todas las pruebas automatizadas:
+
+```bash
 mvn clean test
 ```
-## Prueba de su funcionamiento
 
-<img width="444" height="67" alt="image" src="https://github.com/user-attachments/assets/b44cd734-0b05-4703-95f3-76225cb1dcad" />
+Esto ejecutará todos los escenarios definidos en las **features**.
 
-<img width="1865" height="431" alt="image" src="https://github.com/user-attachments/assets/dc764824-63c6-4ef4-8416-adf88f766746" />
+---
 
+# Reporte de Resultados
+
+Después de ejecutar las pruebas, Maven generará un **reporte HTML** con los resultados.
+
+Ubicación del reporte:
+
+```
+target/HtmlReports/report.html
+```
+
+Este reporte muestra:
+
+* Escenarios ejecutados
+* Escenarios exitosos
+* Errores encontrados
+* Tiempo de ejecución
+
+---
+
+# Ejemplo de Ejecución
+
+```bash
+mvn clean test
+```
+
+Salida esperada:
+
+```
+Tests run: X
+Failures: 0
+Errors: 0
+BUILD SUCCESS
+```
+
+---
+
+# Conclusión
+
+Este laboratorio demuestra la implementación de **BDD con Cucumber y Selenium**, utilizando el patrón **PageFactory** para mejorar la organización del código y facilitar el mantenimiento de las pruebas automatizadas.
+
+El enfoque BDD permite que los escenarios de prueba sean **legibles tanto para desarrolladores como para stakeholders**, facilitando la comunicación y la validación del comportamiento esperado del sistema.
