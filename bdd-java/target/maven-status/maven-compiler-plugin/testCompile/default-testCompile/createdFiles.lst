@@ -1,3 +1,9 @@
+com/eci/myproject/pages/CheckboxPage.class
+com/eci/myproject/pages/LoginPage.class
+com/eci/myproject/steps/LoginSteps.class
 com/eci/myproject/steps/SearchSteps.class
+com/eci/myproject/steps/DropdownSteps.class
+com/eci/myproject/pages/DropdownPage.class
+com/eci/myproject/steps/CheckboxSteps.class
 com/eci/myproject/AppTest.class
 TestRunner.class

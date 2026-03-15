@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="15.204">
-    <testcase classname="Google Search" name="Search for a term" time="14.941">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="25.856">
+    <testcase classname="Checkbox functionality" name="Select the first checkbox" time="7.098">
+        <system-out><![CDATA[Given I open the checkboxes page............................................passed
+When I select the first checkbox............................................passed
+Then the first checkbox should be selected..................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Dropdown functionality" name="Select an option from the dropdown" time="5.655">
+        <system-out><![CDATA[Given I am on the dropdown page.............................................passed
+When I select "Option 1" from the dropdown..................................passed
+Then I should see "Option 1" selected.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Google Search" name="Search for a term" time="7.473">
         <system-out><![CDATA[Given I am on the Google search page........................................passed
 When I search for "GitHub"..................................................passed
 Then I should see "GitHub" in the results...................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login functionality" name="Successful login" time="5.36">
+        <system-out><![CDATA[Given I open the login page.................................................passed
+When I enter valid username and password....................................passed
+And I click the login button................................................passed
+Then I should see the secure area...........................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
