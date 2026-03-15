@@ -162,6 +162,14 @@ BUILD SUCCESS
 
 ---
 
+# Prueba de su funcionamiento
+
+![image](/workspaces/ARCN-BDD-PART2/images/bdd1.png)
+
+![image](/workspaces/ARCN-BDD-PART2/images/bdd2.png)
+
+---
+
 # Conclusión
 
 Este laboratorio demuestra la implementación de **BDD con Cucumber y Selenium**, utilizando el patrón **PageFactory** para mejorar la organización del código y facilitar el mantenimiento de las pruebas automatizadas.
