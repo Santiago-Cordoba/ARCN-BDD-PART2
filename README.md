@@ -164,9 +164,9 @@ BUILD SUCCESS
 
 # Prueba de su funcionamiento
 
-![image](/workspaces/ARCN-BDD-PART2/images/bdd1.png)
+![image](images/bdd1.png)
 
-![image](/workspaces/ARCN-BDD-PART2/images/bdd2.png)
+![image](images/bdd2.png)
 
 ---
 
